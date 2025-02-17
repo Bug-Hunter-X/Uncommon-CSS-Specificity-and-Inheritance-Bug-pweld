@@ -1,0 +1,22 @@
+The solution involves understanding CSS specificity and how inheritance works. Instead of relying on `inherit` in complex scenarios, explicitly declare styles to ensure predictability:
+
+```css
+div {
+  color: blue;
+}
+
+p {
+  color: red;
+}
+
+div p {
+  color: green; /* This will override the color of both the div and the p */
+}
+
+/* Solution: Explicitly set the color.  This approach avoids any ambiguity and ensures that the style is applied as intended. */
+div p {
+  color: purple;
+}
+```
+
+By explicitly setting the color of the `div p` element, we avoid the unexpected behavior of `inherit` in situations with high specificity and multiple inherited styles.  This approach makes the styles more predictable and maintainable.
