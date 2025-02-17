@@ -1,0 +1,22 @@
+The following CSS code snippet demonstrates an uncommon error related to specificity and inheritance:
+
+```css
+div {
+  color: blue;
+}
+
+p {
+  color: red;
+}
+
+div p {
+  color: green; /* This will override the color of both the div and the p */
+}
+
+/* This is an uncommon error: This will not override the color of both the div and the p. It will only override the color of the p */
+div p {
+  color: inherit;
+}
+```
+
+The unusual aspect is that the `inherit` keyword does not behave as expected when dealing with multiple inherited styles with different specificity.  It only applies the immediate parent's style, ignoring previous inherited styles.
